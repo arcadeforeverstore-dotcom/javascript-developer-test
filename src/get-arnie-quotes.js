@@ -8,8 +8,8 @@ const getArnieQuotes = async (urls) => {
   return Promise.all(
     urls.map(async (url) => {
       const response = await httpGet(url);
-      const bodymsg = JSON.parse(response.body);
-      return response.status === 200 ? { 'Arnie Quote': bodymsg.message } : { 'FAILURE': bodymsg.message };
+      const bodyMsg = JSON.parse(response.body);
+      return response.status === 200 ? { 'Arnie Quote': bodyMsg.message } : { 'FAILURE': bodyMsg.message };
     })
   );
 };
